@@ -102,12 +102,27 @@ sp=pass_1.m_axi_p1:DDR[1] # DDR need to be replaced by HBM
 * Out-of-order Execution
 
 ``` c
-
+if(oooQueue) {
+  std::cout << "Create Out of Order Queue" << std::endl;
+  m_queue = clCreateCommandQueue(m_context,
+          m_device_id, 
+          CL_QUEUE_PROFILING_ENABLE |
+          CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE,
+          &err);
+} else {
+  std::cout << "Create Sequential Queue" << std::endl;
+  m_queue = clCreateCommandQueue(m_context,
+          m_device_id, 
+          CL_QUEUE_PROFILING_ENABLE,
+          &err);
+}    
 ```
 
 <img src="figures/螢幕擷取畫面 2025-04-13 202650.png" width="800">
 
 <img src="figures/螢幕擷取畫面 2025-04-13 202709.png" width="800">
+
+* Out of order improves throughput significantly, especially without data dependency.
 
 
 ### Part II (Synchronization)
@@ -149,10 +164,12 @@ for(unsigned int i=0; i < numBuffers; i++) {
 
 <img src="figures/螢幕擷取畫面 2025-04-13 222433.png" width="650">
 
+* Different synchronization strategies affect throughput. Synchronizing two executions with a distance of three indices (Case 2) performs better than synchronizing every three executions (Case 1), because Case 2 allows synchronization to occur while another kernel is executing, whereas Case 1 does not.
+
 
 ### Part III (Buffer)
 
-* In this section, we reuse "Synchronize current execution with the one three positions earlier" and execute 100 times to get average execution time. We set each buffer size is shown below
+* In this section, we reuse "Synchronize current execution with the one three positions earlier" and execute 100 times transfer for buffer to get average execution time. We set different buffer size is shown below
 
 * The buffer size can't be larger than $2^{17}$ ($2^{17} * 512/8$ bits)  in this lab. 
 
@@ -173,3 +190,5 @@ for(unsigned int i=0; i < numBuffers; i++) {
 <img src="figures/螢幕擷取畫面 2025-04-17 183410.png" width="800">
 
 <img src="figures/螢幕擷取畫面 2025-04-17 183418.png" width="800">
+
+* Since a larger buffer means more data needs to be transferred, there is a 'linear' region where burst transfers are efficient. However, if the buffer is too small or too large, it may hit performance bottlenecks.
