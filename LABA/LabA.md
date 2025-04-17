@@ -168,8 +168,8 @@ for(unsigned int i=0; i < numBuffers; i++) {
 
 <img src="figures/螢幕擷取畫面 2025-04-17 181021.png" width="800">
 
-* The size is ($2^{13}$ * 512 / 8 bytes) for each execution, and it has 100 executions.
+* The size is ($2^{14}$ * 512 / 8 bytes) for each execution, and it has 100 executions.
 
-<img src="figures/螢幕擷取畫面 2025-04-17 175247.png" width="800">
+<img src="figures/螢幕擷取畫面 2025-04-17 183410.png" width="800">
 
-<img src="figures/螢幕擷取畫面 2025-04-17 175257.png" width="800">
+<img src="figures/螢幕擷取畫面 2025-04-17 183418.png" width="800">
