@@ -11,7 +11,7 @@
 
 * Separate data movement (I/O Processor) from Computation (Processing Element)
 
-<img src="螢幕擷取畫面 2025-04-13 153519.png" width="800">
+<img src="figures/2025-04-13_153519.png" width="800">
 
 ``` C
 // partition kernel into three parts read, write, PE
@@ -97,7 +97,7 @@ sp=pass_1.m_axi_p1:DDR[1] # DDR need to be replaced by HBM
 
 * In-order Execution
 
-![[螢幕擷取畫面 2025-04-13 195347.png|1000]]
+<img src="figures/螢幕擷取畫面 2025-04-13 195347.png" width="800">
 
 * Out-of-order Execution
 
