@@ -11,7 +11,7 @@
 
 * Separate data movement (I/O Processor) from Computation (Processing Element)
 
-<img src="figures/螢幕擷取畫面 2025-04-13 153519" width="800">
+<img src="figures/螢幕擷取畫面 2025-04-13 153519.png" width="800">
 
 ``` C
 // partition kernel into three parts read, write, PE
