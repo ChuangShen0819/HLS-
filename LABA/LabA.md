@@ -127,9 +127,9 @@ for(unsigned int i=0; i < numBuffers; i++) {
 clFinish(api.getQueue());
 ```
 
-<img src="figures/螢幕擷取畫面 2025-04-13 222648.png" width="800">
+<img src="figures/螢幕擷取畫面 2025-04-13 222648.png" width="600">
 
-<img src="figures/螢幕擷取畫面 2025-04-13 222642.png" width="800">
+<img src="figures/螢幕擷取畫面 2025-04-13 222642.png" width="600">
 
 
 * Synchronize current execution with the one three positions earlier
@@ -147,7 +147,7 @@ for(unsigned int i=0; i < numBuffers; i++) {
 
 <img src="figures/螢幕擷取畫面 2025-04-13 222426.png" width="800">
 
-<img src="figures/螢幕擷取畫面 2025-04-13 222433.png" width="800">
+<img src="figures/螢幕擷取畫面 2025-04-13 222433.png" width="550">
 
 
 ### Part III (Buffer)
