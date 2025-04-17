@@ -145,9 +145,9 @@ for(unsigned int i=0; i < numBuffers; i++) {
   clFinish(api.getQueue());
 ```
 
-<img src="figures/螢幕擷取畫面 2025-04-13 222426.png" width="800">
+<img src="figures/螢幕擷取畫面 2025-04-13 222426.png" width="650">
 
-<img src="figures/螢幕擷取畫面 2025-04-13 222433.png" width="550">
+<img src="figures/螢幕擷取畫面 2025-04-13 222433.png" width="650">
 
 
 ### Part III (Buffer)
@@ -158,4 +158,4 @@ for(unsigned int i=0; i < numBuffers; i++) {
 
 * A comparison of different buffer sizes
 
-<img src="figures/螢幕擷取畫面 2025-04-13 231048.png" width="800">
+<img src="figures/螢幕擷取畫面 2025-04-13 231048.png" width="600">
