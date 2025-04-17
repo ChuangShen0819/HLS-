@@ -11,7 +11,7 @@
 
 * Separate data movement (I/O Processor) from Computation (Processing Element)
 
-<img src="figures/2025-04-13_153519.png" width="800">
+<img src="figures/螢幕擷取畫面 2025-04-13 153519" width="800">
 
 ``` C
 // partition kernel into three parts read, write, PE
@@ -105,9 +105,11 @@ sp=pass_1.m_axi_p1:DDR[1] # DDR need to be replaced by HBM
 
 ```
 
-![[螢幕擷取畫面 2025-04-13 202650.png|1000]]
+<img src="figures/螢幕擷取畫面 2025-04-13 202650.png" width="800">
 
-![[螢幕擷取畫面 2025-04-13 202709.png|1000]]
+<img src="figures/螢幕擷取畫面 2025-04-13 202709.png" width="800">
+
+
 ### Part II (Synchronization)
 
 * Synchronize every three execution
@@ -125,10 +127,10 @@ for(unsigned int i=0; i < numBuffers; i++) {
 clFinish(api.getQueue());
 ```
 
-![[螢幕擷取畫面 2025-04-13 222648.png|1000]]
+<img src="figures/螢幕擷取畫面 2025-04-13 222648.png" width="800">
 
+<img src="figures/螢幕擷取畫面 2025-04-13 222642.png" width="800">
 
-![[螢幕擷取畫面 2025-04-13 222642.png|1000]]
 
 * Synchronize current execution with the one three positions earlier
 
@@ -143,16 +145,17 @@ for(unsigned int i=0; i < numBuffers; i++) {
   clFinish(api.getQueue());
 ```
 
-![[螢幕擷取畫面 2025-04-13 222426.png|700]]
+<img src="figures/螢幕擷取畫面 2025-04-13 222426.png" width="800">
 
-![[螢幕擷取畫面 2025-04-13 222433.png|700]]
+<img src="figures/螢幕擷取畫面 2025-04-13 222433.png" width="800">
+
 
 ### Part III (Buffer)
 
 * The buffer size can't be larger than $2^{17}$ ($2^{17} * 512/8$ bits)  in this lab. 
 
-![[螢幕擷取畫面 2025-04-13 230334.png|1000]]
+<img src="figures/螢幕擷取畫面 2025-04-13 230334.png" width="800">
 
 * A comparison of different buffer sizes
 
-![[螢幕擷取畫面 2025-04-13 231048.png|600]]
+<img src="figures/螢幕擷取畫面 2025-04-13 231048.png" width="800">
