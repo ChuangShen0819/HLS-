@@ -152,10 +152,24 @@ for(unsigned int i=0; i < numBuffers; i++) {
 
 ### Part III (Buffer)
 
+* In this section, we reuse "Synchronize current execution with the one three positions earlier" and execute 100 times to get average execution time. We set each buffer size is shown below
+
 * The buffer size can't be larger than $2^{17}$ ($2^{17} * 512/8$ bits)  in this lab. 
 
 <img src="figures/螢幕擷取畫面 2025-04-13 230334.png" width="800">
 
-* A comparison of different buffer sizes
+* A comparison of different buffer sizes ($512 * 2^6$ bits to $512 * 2^{16}$ bits) (unit in figure is byte)
 
 <img src="figures/螢幕擷取畫面 2025-04-13 231048.png" width="600">
+
+* The size is (2 * 512 / 8 bytes)
+
+<img src="figures/螢幕擷取畫面 2025-04-17 181014.png" width="800">
+
+<img src="figures/螢幕擷取畫面 2025-04-17 181021.png" width="800">
+
+* The size is ($2^{13} * 512 / 8 bytes)
+
+<img src="figures/螢幕擷取畫面 2025-04-17 175247.png" width="800">
+
+<img src="figures/螢幕擷取畫面 2025-04-17 175257.png" width="800">
