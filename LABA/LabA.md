@@ -1,5 +1,15 @@
 
 ---
+### overview
+* This lab explores how the host program can influence the overall performance of the application.
+
+* We divide this lab into four parts. The first part explains the kernel function.
+
+* The second to fourth parts demonstrate how the host program can significantly optimize system throughput.
+
+* These include: in-order vs. out-of-order execution, different synchronization strategies, and finally, identifying the optimal (sweet spot) region for memory movement.
+
+
 ### Part 0
 * Kernel Function	
 ``` C
@@ -12,6 +22,8 @@
 * Separate data movement (I/O Processor) from Computation (Processing Element)
 
 <img src="figures/螢幕擷取畫面 2025-04-13 153519.png" width="800">
+
+* Since input and output are physical io ports, it is represented by pointer. And others are used pass by reference.
 
 ``` C
 // partition kernel into three parts read, write, PE
@@ -69,6 +81,7 @@ void pass_dataflow(const ap_int<512> *input,
   
 }
 ```
+* The top function must use extern "C" to prevent C++ name mangling, so that the hardware kernel can be correctly linked and called from the host code.
 
 ``` C
 extern "C" {
