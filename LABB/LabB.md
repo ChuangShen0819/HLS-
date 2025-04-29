@@ -25,6 +25,8 @@ collect2: error: ld returned 1 exit status
 
 <img src = "figures/螢幕擷取畫面 2025-04-29 203005.png" width = "650">
 
+<img src = "figures/螢幕擷取畫面 2025-04-29 205429.png" width = "650">
+
 ### C simulation results
 
 <img src = "figures/螢幕擷取畫面 2025-04-29 204158.png" width = "550">
