@@ -14,20 +14,20 @@
 collect2: error: ld returned 1 exit status
 ```
 
-<img src = "figures/螢幕擷取畫面 2025-04-29 202904.png", width = 650>
+<img src = "figures/螢幕擷取畫面 2025-04-29 202904.png", width = "650">
 
-<img src = "figures/螢幕擷取畫面 2025-04-29 202919.png", width = 650>
+<img src = "figures/螢幕擷取畫面 2025-04-29 202919.png", width = "650">
 
 * Solution
 	Copy Filter2D from filter2d_sw.cpp to hls_testbench.cpp and rename it as Filter2D_SW
 
-<img src = "figures/螢幕擷取畫面 2025-04-29 202931.png", width = 650>
+<img src = "figures/螢幕擷取畫面 2025-04-29 202931.png", width = "650">
 
-<img src = "figures/螢幕擷取畫面 2025-04-29 202931.png", width = 650>
+<img src = "figures/螢幕擷取畫面 2025-04-29 202931.png", width = "650">
 
 ### C simulation results
 
-<img src = "figures/螢幕擷取畫面 2025-04-29 204158.png", width = 650>
+<img src = "figures/螢幕擷取畫面 2025-04-29 204158.png", width = "650">
 
 ### Observation of synthesis
 
