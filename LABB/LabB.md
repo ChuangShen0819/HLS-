@@ -77,7 +77,8 @@ Throughput (MB/s)     = 373 MB/s
 * The flow chart of hardware
 <img src = "figures/filterBlkDia.jpg" width = "800">
 
-* 
+* An approach to solving the memory bandwidth bottleneck
+<img src = "figures/Window2D.jpg" width = "800">
 ``` c
 
 ```
