@@ -73,7 +73,14 @@ Throughput(Pixel/s)   = 1920*1080*3*60
 Throughput (MB/s)     = 373 MB/s
 ```
 
+### Kernel explaination
+* The flow chart of hardware
+<img src = "figures/filterBlkDia.jpg" width = "800">
 
+* 
+``` c
+
+```
 
 ### Errors you may encounter when running the testbench
 
