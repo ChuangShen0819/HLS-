@@ -34,3 +34,41 @@ collect2: error: ld returned 1 exit status
 
 ### Synthesis Observations
 
+## section II (Vitis)
+### Step by step
+
+* Step 1 import the kernel files
+
+<img src = "figures/螢幕擷取畫面 2025-05-07 215510.png" width = "550">
+
+* Step 2 import the host files
+
+<img src = "figures/螢幕擷取畫面 2025-05-07 215705.png" width = "550">
+
+* Step 3 configure the kernel function
+**only add the top function!!!**
+
+<img src = "figures/螢幕擷取畫面 2025-05-07 215715.png" width = "550">
+
+* Step 4 build kernels -> hw_link -> host -> system, respectively.
+**remember it also needs to solve the undefined reference like in vitis_hls**
+
+* Step 5 configure the run setting
+**Make sure to add `-x` before `./binary_container_1.xclbin` to match the parser configuration:**
+
+```
+parser.addSwitch("--fpga",    "-x", "FPGA binary (xclbin) file to use");
+```
+
+<img src = "figures/螢幕擷取畫面 2025-05-07 220225.png" width = "550">
+
+**According the requirement, choose the runtime profiling setting.**
+
+<img src = "figures/螢幕擷取畫面 2025-05-07 220750.png" width = "550">
+
+* Step 6 run and check the results
+
+<img src = "figures/螢幕擷取畫面 2025-05-07 221124.png" width = "550">
+
+
+
