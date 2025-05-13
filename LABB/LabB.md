@@ -79,6 +79,7 @@ Throughput (MB/s)     = 373 MB/s
 
 * An approach to solving the memory bandwidth bottleneck
 <img src = "figures/Window2D.jpg" width = "600">
+
 ``` c
 
 ```
