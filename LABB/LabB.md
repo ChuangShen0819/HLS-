@@ -52,6 +52,28 @@ void Filter2D(
 }
 ```
 
+* The bottleneck of memory (the kernel of 2D convolution is 15 x 15)
+```
+Memory Accesses to Read filter Co-efficients = 15x15 = 225
+Memory Accesses to Read Neighbouring Pixels  = 15x15 = 225
+Memory Accesses to Write to Output           = 1
+Total Memory Accesses                       = 451 
+```
+
+* Simple calculation (Our target)
+```
+Video Resolution        = 1920 x 1080
+Frame Width (pixels)    = 1920 
+Frame Height (pixels)   = 1080 
+Frame Rate(FPS)         = 60 
+Pixel Depth(Bits)       = 8 
+Color Channels(YUV)     = 3 
+Throughput(Pixel/s)   = Frame Width * Frame Height * Channels * FPS
+Throughput(Pixel/s)   = 1920*1080*3*60
+Throughput (MB/s)     = 373 MB/s
+```
+
+
 
 ### Errors you may encounter when running the testbench
 
