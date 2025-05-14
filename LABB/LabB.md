@@ -75,6 +75,22 @@ Throughput (MB/s)     = 373 MB/s
 Input (MB/s)          = 95.115 GB/s
 ```
 
+* CPU time
+```
+----------------------------------------------------------------------------
+Number of runs    : 60
+Image width       : 1920
+Image height      : 1080
+Filter type       : 6
+
+Generating a random 1920x1080 input image
+Running Software version on 60 images
+
+CPU  Time         :    24.4447 s
+CPU  Throughput   :    14.5617 MB/s
+----------------------------------------------------------------------------
+```
+
 ### Kernel explaination
 * The flow chart of hardware
 <img src = "figures/filterBlkDia.jpg" width = "800">
