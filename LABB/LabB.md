@@ -80,6 +80,69 @@ Throughput (MB/s)     = 373 MB/s
 * An approach to solving the memory bandwidth bottleneck
 <img src = "figures/Window2D.jpg" width = "600">
 
+* Read
+``` c
+void ReadFromMem(
+        unsigned short       width,
+        unsigned short       height,
+        unsigned short       stride,
+        const char          *coeffs,
+        hls::stream<char>   &coeff_stream,
+        const unsigned char *src,
+        hls::stream<U8>     &pixel_stream )
+{
+    assert(stride <= MAX_IMAGE_WIDTH);
+    assert(height <= MAX_IMAGE_HEIGHT);
+    assert(stride%64 == 0);
+
+    unsigned num_coefs = FILTER_V_SIZE*FILTER_H_SIZE;
+    unsigned num_coefs_padded = (((num_coefs-1)/64)+1)*64; // Make sure number of reads of multiple of 64, enables auto-widening
+    read_coefs: for (int i=0; i<num_coefs_padded; i++) {
+        U8 coef = coeffs[i];
+        if (i<num_coefs) coeff_stream.write( coef );        
+    }
+
+    stride = (stride/64)*64; // Makes compiler see that stride is a multiple of 64, enables auto-widening
+    unsigned offset = 0;
+    unsigned x = 0;
+    read_image: for (int n = 0; n < height*stride; n++) {
+        U8 pix = src[n];
+        if (x<width) pixel_stream.write( pix );
+        if (x==(stride-1)) x=0; else x++;
+     }
+}
+```
+
+* Write
+``` c
+void WriteToMem(
+        unsigned short       width,
+        unsigned short       height,
+        unsigned short       stride,
+        hls::stream<U8>     &pixel_stream,
+        unsigned char       *dst)
+{
+    assert(stride <= MAX_IMAGE_WIDTH);
+    assert(height <= MAX_IMAGE_HEIGHT);
+    assert(stride%64 == 0);
+
+    stride = (stride/64)*64; // Makes compiler see that stride is a multiple of 64, enables auto-widening
+    unsigned offset = 0;
+    unsigned x = 0;
+    write_image: for (int n = 0; n < height*stride; n++) {
+        U8 pix = (x<width) ? pixel_stream.read() : 0;
+        dst[n] = pix;
+        if (x==(stride-1)) x=0; else x++;
+    }    
+}
+```
+
+* Local Buffer
+``` c
+
+```
+
+* Kernel
 ``` c
 
 ```
