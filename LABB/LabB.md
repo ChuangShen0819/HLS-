@@ -342,6 +342,8 @@ collect2: error: ld returned 1 exit status
 
 * Synthesis report
 <img src = "figures/螢幕擷取畫面 2025-05-14 165344.png" width = "800">
+
+<img src = "figures/螢幕擷取畫面 2025-05-14 165723.png" width = "800">
 ```
 
 
