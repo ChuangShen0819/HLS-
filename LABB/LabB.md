@@ -1101,5 +1101,35 @@ parser.addSwitch("--fpga",    "-x", "FPGA binary (xclbin) file to use");
 
 <img src = "figures/螢幕擷取畫面 2025-05-07 221124.png" width = "550">
 
+* Final speed
+```
+----------------------------------------------------------------------------
+
+Xilinx 2D Filter Example Application (Randomized Input Version)
+
+FPGA binary       : ../xclbin/fpgabinary.hw.xclbin
+Number of runs    : 60
+Image width       : 1920
+Image height      : 1080
+Filter type       : 3
+Max requests      : 12
+Compare perf.     : 1
+
+Programming FPGA device
+Generating a random 1920x1080 input image
+Running FPGA accelerator on 60 images
+Running Software version
+Comparing results
+
+Test PASSED: Output matches reference
+
+FPGA Time         :     0.4240 s
+FPGA Throughput   :   839.4765 MB/s
+CPU  Time         :    28.9083 s
+CPU  Throughput   :    12.3133 MB/s
+FPGA Speedup      :    68.1764 x
+----------------------------------------------------------------------------
+```
+
 
 
