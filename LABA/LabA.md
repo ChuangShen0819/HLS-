@@ -177,7 +177,7 @@ for(unsigned int i=0; i < numBuffers; i++) {
 
 <img src="figures/螢幕擷取畫面 2025-04-13 222433.png" width="650">
 
-* Different synchronization strategies affect throughput. Synchronizing two executions with a distance of three indices (Case 2) performs better than synchronizing every three executions (Case 1), because Case 2 allows synchronization to occur while another kernel is executing, whereas Case 1 does not.
+* Different synchronization strategies affect throughput. Synchronizing two executions with a distance of three indices (Case 2) performs better than synchronizing every three executions (Case 1), because Case 2 allows synchronization to occur while another kernel is executing(every 3 executions need one finish), whereas Case 1 does not.
 
 
 ### Part III (Buffer)
